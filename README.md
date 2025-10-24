@@ -191,4 +191,4 @@ A **full-stack MERN web application** designed to connect job seekers with compa
 
 ### Deployment
 
-The app is deployed on Vercel:[ https://chat-ai-eight-hazel.vercel.app/](https://jseekingappp.netlify.app)
+The app is deployed on Netlify :[https://jseekingappp.netlify.app](https://jseekingappp.netlify.app)
