@@ -104,7 +104,7 @@ const CompanyJobApplications = ({ currentUser }) => {
   }, [currentUser]);
 
   const handleResumeClick = (resumePath) => {
-    window.open(`http://localhost:3000/${resumePath}`, "_blank");
+    window.open(`https://u09-fullstack-js-kristinajera.onrender.com/${resumePath}`, "_blank");
   };
 
   if (loading) {

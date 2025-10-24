@@ -38,8 +38,8 @@ const CompanyProfile = () => {
                 );
 
                 const data = response.data.data;
-                const profileImage = data.profileUrl ? `http://localhost:3000${data.profileUrl}` : null; 
-
+                const profileImage = data.profileUrl ? `https://u09-fullstack-js-kristinajera.onrender.com${data.profileUrl}` : null;
+               
                 setFormData({
                     companyName: data.companyName,
                     about: data.about,

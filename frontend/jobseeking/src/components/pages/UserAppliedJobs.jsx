@@ -60,6 +60,18 @@ const UserAppliedJobs = () => {
     }
   };
 
+   const handleResumeClick = (resumePath) => {
+    window.open(`https://u09-fullstack-js-kristinajera.onrender.com/${resumePath}`, "_blank");
+  };
+
+  if (loading) {
+    return <div className="text-center py-4">Loading applications...</div>;
+  }
+
+  if (error) {
+    return <div className="text-center py-4 text-red-500">{error}</div>;
+  }
+
   return (
     <section className="text-gray-800 body-font">
       <div className="pb-12 mx-auto ">
@@ -111,14 +123,16 @@ const UserAppliedJobs = () => {
                     </p>
                     <p className="leading-relaxed mb-1">
                       Resume:{" "}
+                       {app.resume && (
                       <a
-                        href={app.resume}
+                        onClick={() => handleResumeClick(app.resume)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-indigo-500 hover:underline"
                       >
                         View Resume
                       </a>
+                          )}
                     </p>
                     <p className="leading-relaxed mb-1">
                       Cover Letter: {app.coverLetter || "N/A"}
