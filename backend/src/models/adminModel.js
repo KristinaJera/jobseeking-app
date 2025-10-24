@@ -19,7 +19,7 @@ const adminSchema = new Schema({
         type: String,
         required: [true, "Password is required"],
         minlength: [8, "Password must be at least 8 characters long"],
-        select: false, // Do not return password by default
+        select: false, // Password won't be returned by default
     },
     role: {
         type: String,
@@ -31,15 +31,14 @@ const adminSchema = new Schema({
 // Middleware to hash password before saving
 adminSchema.pre('save', async function(next) {
     if (!this.isModified('password')) return next();
-
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt);
     next();
 });
 
-// Compare password
+// Compare password (handles select: false)
 adminSchema.methods.comparePassword = async function(candidatePassword) {
-    return bcrypt.compare(candidatePassword, this.password);
+    return await bcrypt.compare(candidatePassword, this.password);
 };
 
 // Generate JWT token

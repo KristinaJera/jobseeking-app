@@ -28,6 +28,7 @@
 //         console.log('Password updated successfully');
 //     }
 // });
+
 import bcrypt from 'bcrypt';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
@@ -57,7 +58,8 @@ const hashPassword = async () => {
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(plainTextPassword, saltRounds);
 
-    const admin = await Admin.findOne({ email: 'admin@example.com' });
+ const admin = await Admin.findOne({ email: 'admin@example.com' }).select('+password');
+
     if (!admin) {
       console.log('No matching admin found.');
       return;
