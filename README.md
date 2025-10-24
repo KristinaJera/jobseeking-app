@@ -126,14 +126,14 @@ A **full-stack MERN web application** designed to connect job seekers with compa
    ```bash
    cd backend
    npm install
-   npm run dev
+   npm run build
 
 3. Run frontend locally:
 
    ```bash
    cd frontend/jobseeking
    npm install
-   npm run dev
+   npm run build
 
 ## Screenshots
 ### Contact Form (Users & Companies)
@@ -163,7 +163,6 @@ A **full-stack MERN web application** designed to connect job seekers with compa
 <tr>
 <td><img src="./screenshots/image11.png" width="200" /></td>
 <td><img src="./screenshots/image12.png" width="200" /></td>
-<td></td>
 </tr>
 </table>
 
@@ -190,6 +189,6 @@ A **full-stack MERN web application** designed to connect job seekers with compa
 </tr>
 </table>
 
+### Deployment
 
-
-   
+The app is deployed on Vercel:[ https://chat-ai-eight-hazel.vercel.app/](https://jseekingappp.netlify.app)
