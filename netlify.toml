@@ -1,4 +1,4 @@
 [build]
   base = "frontend/jobseeking"
-  publish = "frontend/jobseeking/dist"
+  publish = "dist"
   command = "npm run build"
