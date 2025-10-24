@@ -8,16 +8,16 @@ const createAdmin = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI);
 
-    const existingAdmin = await Admin.findOne({ email: 'admin@example.com' });
+    const existingAdmin = await Admin.findOne({ email: 'admin2@example.com' });
     if (existingAdmin) {
       console.log('Admin already exists:', existingAdmin.email);
       return;
     }
 
     const admin = new Admin({
-      username: 'superadmin',
-      email: 'admin@example.com',
-      password: '1234567890',  // will be hashed automatically
+      username: 'admin',
+      email: 'admin2@example.com',
+      password: '12345678900',  // will be hashed automatically
     });
 
     await admin.save();
